@@ -1,0 +1,17 @@
+.header {
+    padding: 1rem;
+    background-color: var(--clr-primario);
+}
+
+.header__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__content nav button {
+    color: var(--clr-secundario);
+    margin: 0 15px;
+    font-size: 1rem;
+}

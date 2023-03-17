@@ -9,11 +9,15 @@
 
 :root {
   --clr-primario: rgb(20,20,20);
-  --clr-secundario: rgb(225, 5, 5);
-  --clr-texto: rgb(8, 0, 255);
-  --clr-titulo: rgb(6, 222, 6);
+  --clr-secundario: rgb(255, 255, 255);
+  --clr-terciario: rgb(170, 170, 170);
   --ff-primario: 'Poppins', sans-serif;
   --ff-secunadrio: 'Noto Serif Lao', serif;
+}
+
+button {
+  border: 0;
+  background: transparent;
 }
 
 .container {
