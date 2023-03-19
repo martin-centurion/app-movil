@@ -1,7 +1,8 @@
-import { BsBag } from 'react-icons/bs';
+import { BsBag, BsSearch } from 'react-icons/bs';
 import cartContext from '../../context/cartContext';
 import { useContext } from 'react';
 import './styles.css';
+import { Link } from 'react-router-dom';
 
 function CartWidget() {
   
@@ -13,12 +14,20 @@ function CartWidget() {
         
         <button className='cart-widget'>
 
-            <BsBag  
-              className='icon'
-              />
-            <span className='cont'> 
-                { carCount } 
-            </span>
+            <Link to='/'>
+                <BsSearch 
+                  className='icon'
+                />
+            </Link>
+
+             <Link to='/cart'>
+                <BsBag  
+                  className='icon'
+                  />
+                <span className='cont'> 
+                    { carCount } 
+                </span>
+             </Link>
 
         </button>
 

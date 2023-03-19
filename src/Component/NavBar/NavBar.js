@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './styles.css';
-import { BsListNested, BsXLg } from 'react-icons/bs';
+import { BsXLg } from 'react-icons/bs';
+import { VscListSelection } from 'react-icons/vsc';
 import CartWidget from '../CartWidget/CartWidget';
 import Logo from '../Logo/Logo';
 
@@ -51,7 +52,7 @@ function NavBar() {
                         <button 
                             className='nav-btn' 
                             onClick={ showNavBar }>
-                            <BsListNested />
+                            <VscListSelection />
                         </button>
                     </div>  
                 </div>

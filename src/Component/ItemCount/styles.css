@@ -1,13 +1,13 @@
 .bot {
     display: flex;
     flex-direction: column;
-    padding-top: 2rem;
 }
 
 .bot__content {
     display: flex;
     flex-direction: row;
     align-items: baseline;
+    gap: 2rem;
 }
 
 .bot__content-contador {
@@ -24,24 +24,7 @@
     font-size: 1rem;
 }
 
-.bot__content-bot > button {
-    margin-left: 1rem;
-}
 
-.bot button {
-    font-size: .75rem;
-    letter-spacing: .15rem;
-    text-transform: uppercase;
-    color: var(--clr-primario);
-    border: 2px solid var(--clr-primario);
-    padding: .5rem 1.5rem;
-    cursor: pointer;
-}
-
-.bot button:hover {
-    background-color: var(--clr-primario);
-    color: var(--clr-secundario);
-}
 
 @media screen and (max-width: 768px) {
 
@@ -51,11 +34,8 @@
     
     .bot__content {
         flex-direction: column;
+        margin-top: 2rem;
+        gap: 0;
     }
 
-    .bot__content-bot > button {
-        margin-top: 10px;
-        margin-left: 0;
-        width: 186.39px;
-    }
 }

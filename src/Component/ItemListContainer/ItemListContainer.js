@@ -76,12 +76,12 @@ async function getItemsFromDatabase() {
     }, [idCategory]);
   
     return (
-      <>
+      <div className='container'>
         <NavCategory />
-        <div className="producto container">
+        <div className='producto'>
           <ItemList users={users} />
         </div>
-      </>
+      </div>
     );
   }
   

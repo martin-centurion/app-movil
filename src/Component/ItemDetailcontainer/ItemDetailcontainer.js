@@ -79,6 +79,7 @@ function ItemDetailContainer() {
                         <h4>{user.description}</h4>
                         <p>$ {user.price}</p>
                         <p className='stock'>Stock Disponible: {user.stock} Kg.</p>
+                        
                         {
                             goToCart
                             ? <Link to='/'>

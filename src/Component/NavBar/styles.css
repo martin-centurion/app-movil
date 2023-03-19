@@ -13,12 +13,13 @@
 .header__content nav button {
     color: var(--clr-secundario);
     margin: 0 15px;
-    font-size: .8rem;
+    font-size: 1rem;
 }
 
 .cart {
     display: none;
 }
+
 
 .header__content-menu nav button:hover {
     color: var(--clr-terciario);
@@ -31,7 +32,7 @@
   outline: none;
   border: none;
   color: var(--clr-secundario);
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   visibility: hidden;
   opacity: 0;
   align-items: center;
@@ -68,9 +69,12 @@
         transform: none;
     }
 
-    nav .nav-close-btn {
+    .nav-close-btn {
+        color: var(--clr-secundario);
+        font-size: 1.8rem;
         position: absolute;
-        top: 1rem;
-        right: 1rem;
+        top: 2rem;
+        right: 2rem;
+        cursor: pointer;
     }
 }

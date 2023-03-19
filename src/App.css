@@ -3,6 +3,7 @@
 * {
   margin: 0;
   padding: 0;
+  text-decoration: none;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
@@ -10,7 +11,8 @@
 :root {
   --clr-primario: rgb(39, 38, 38);
   --clr-secundario: rgb(255, 255, 255);
-  --clr-terciario: rgb(170, 170, 170);
+  --clr-terciario: rgb(137, 137, 137);
+  --clr-gris-claro: rgb(221, 220, 220);
   --ff-primario: 'Poppins', sans-serif;
   --ff-secundario: 'Playfair Display', serif;;
 }

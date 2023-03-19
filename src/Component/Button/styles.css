@@ -1,4 +1,4 @@
-button {
+.bot_detail button {
     font-size: .75rem;
     letter-spacing: .15rem;
     text-transform: uppercase;
@@ -9,7 +9,8 @@ button {
     transition: .3s;
 }
 
-button:hover {
+.bot_detail button:hover {
     color: var(--clr-terciario);
     border-bottom: 2px solid var(--clr-primario);
 }
+
