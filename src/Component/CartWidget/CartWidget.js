@@ -1,17 +1,28 @@
-import React from 'react';
-import './styles.css';
 import { BsBag } from 'react-icons/bs';
+import cartContext from '../../context/cartContext';
+import { useContext } from 'react';
+import './styles.css';
 
 function CartWidget() {
+  
+  const { cart } = useContext(cartContext);
+
+  const carCount = cart.length;
+  
   return (
-    <div className='cart'>
-        <div className='cart__content'>
-            <div className='cart__content-icono'>
-                <BsBag />
-            </div>
-        </div>
-    </div>
-  )
+        
+        <button className='cart-widget'>
+
+            <BsBag  
+              className='icon'
+              />
+            <span className='cont'> 
+                { carCount } 
+            </span>
+
+        </button>
+
+  );
 }
 
 export default CartWidget;

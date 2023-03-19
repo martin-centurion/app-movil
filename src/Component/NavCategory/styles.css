@@ -1,0 +1,19 @@
+.category {
+    margin: 2rem 0 1rem;
+    padding: 2rem;
+}
+
+.category__content h2 {
+    color: var(--clr-primario);
+    font-family: var(--ff-primario);
+    letter-spacing: .05rem;
+    font-size: 2rem;
+}
+
+.nav-category {
+    margin-top: 1rem;
+}
+
+.btn-category {
+    margin-right: 10px;
+}

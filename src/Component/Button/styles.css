@@ -1,0 +1,15 @@
+button {
+    font-size: .75rem;
+    letter-spacing: .15rem;
+    text-transform: uppercase;
+    color: var(--clr-primario);
+    border-bottom: 2px solid var(--clr-primario);
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    color: var(--clr-terciario);
+    border-bottom: 2px solid var(--clr-primario);
+}

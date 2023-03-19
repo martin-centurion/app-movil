@@ -1,3 +1,4 @@
 h2 {
+    font-family: var(--ff-secundario);
     color: var(--clr-secundario);
 }

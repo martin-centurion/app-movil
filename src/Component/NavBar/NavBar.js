@@ -1,31 +1,60 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import './styles.css';
+import { BsListNested, BsXLg } from 'react-icons/bs';
 import CartWidget from '../CartWidget/CartWidget';
 import Logo from '../Logo/Logo';
 
 function NavBar() {
+
+    const navRef = useRef();
+    const showNavBar = () => {
+    navRef.current.classList.toggle('responsive_nav');
+    }  
   return (
     <div className='header'>
         <div className='header__content container'>
 
             <div className='header__content-logo'>
-                <Logo />
+                <Link to="/">
+                    <Logo />
+                </Link>
             </div>
 
-            <div>
+            <div className='header__content-menu'>
 
-                <nav>
-                    <button>Home</button>
-                    <button>Tienda</button>
-                    <button>Nosotros</button>
-                    <button>Contacto</button>
-                </nav>
+                    <nav ref={ navRef }>
+                        <Link to="/">
+                            <button onClick={ showNavBar }>Home</button>
+                        </Link>
+                        <Link to="/tienda">
+                            <button onClick={ showNavBar }>Tienda</button>
+                        </Link>
+                        <Link to="/">
+                            <button onClick={ showNavBar }>Nosotros</button>
+                        </Link>
+                        <Link to="/">
+                            <button onClick={ showNavBar }>Contacto</button>
+                        </Link>
+                        <Link onClick={ showNavBar } to='/cart'>
+                            <CartWidget />
+                        </Link>
 
-            </div>
-
-            <div className='header__content-cartwidget'>
-                <CartWidget />
-            </div>
+                        <button 
+                            className='nav-btn nav-close-btn' 
+                            onClick={ showNavBar }>
+                            <BsXLg />
+                        </button>
+                    </nav>
+                    
+                    <div className='cart'>
+                        <button 
+                            className='nav-btn' 
+                            onClick={ showNavBar }>
+                            <BsListNested />
+                        </button>
+                    </div>  
+                </div>
 
         </div>
     </div>

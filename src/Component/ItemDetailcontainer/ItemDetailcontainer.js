@@ -1,0 +1,105 @@
+import "./styles.css";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useContext } from "react";
+import cartContext from "../../context/cartContext";
+import ItemCount from "../ItemCount/ItemCount";
+import { Link } from "react-router-dom";
+import Button from "../Button/Button";
+
+// Config Firebase---------------------------------------------------------
+
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, doc, getDoc } from "firebase/firestore";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyD-gg7YhLFeWODpwNVbWKF5PNFrpSfarNA",
+    authDomain: "proyecto-final-react-js-f81a2.firebaseapp.com",
+    projectId: "proyecto-final-react-js-f81a2",
+    storageBucket: "proyecto-final-react-js-f81a2.appspot.com",
+    messagingSenderId: "31661348798",
+    appId: "1:31661348798:web:78f7a3958d5f25ac120bef"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+async function getSingleItemFromDatabase(idItem) {
+  // referencia de la colección y del documento
+  const productsColectionRef = collection(db, "products");
+  const docRef = doc(productsColectionRef, idItem);
+
+  // getDoc -> datos
+  const docSnapshot = await getDoc(docRef);
+
+  // extra
+  if (docSnapshot.exists() === false) 
+    throw new Error("No existe el documento") 
+
+  return { ...docSnapshot.data(), id: docSnapshot.id };
+}
+
+// -------------------------------------------------------------------------------
+
+function ItemDetailContainer() {
+  const [user, setUser] = useState({});
+  const [goToCart, setGoToCart] = useState(false);
+
+
+  const params = useParams();
+  const idUser = params.idUser;
+
+  useEffect(() => {
+    getSingleItemFromDatabase(idUser)
+      .then((respuesta) => {
+        setUser(respuesta);
+      })
+      .catch((error) => alert(error));
+  }, []);
+
+  const { addItem } = useContext(cartContext);
+
+  function onAddToCart(count) {
+    setGoToCart(true);
+    addItem(user, count);
+  }
+
+
+  return (
+    <div className='detail container'>
+        <div className='detail__content'>
+                <div className='detail__content-img' key={user.id}>
+                    
+                    <div className='img-movil'>
+                        <img src={user.img500} alt={user.title} />
+                    </div>
+                    
+                    <div className='detail__content-title'>
+                        <h1>{user.title}</h1>
+                        <h4>{user.description}</h4>
+                        <p>$ {user.price}</p>
+                        <p className='stock'>Stock Disponible: {user.stock} Kg.</p>
+                        {
+                            goToCart
+                            ? <Link to='/'>
+                                    <Button className='bot_add'>
+                                        Ir al Carrito
+                                    </Button>
+                              </Link>
+                            : <ItemCount
+                                    onAddToCart={onAddToCart}
+                                    initial={1}
+                                    stock={user.stock}
+                              /> 
+                        }
+
+                    </div>
+                    
+                        
+                </div>
+        </div>
+    </div>
+  );
+}
+
+export default ItemDetailContainer;

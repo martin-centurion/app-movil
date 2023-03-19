@@ -1,8 +1,21 @@
-.cart {
-    margin: 1rem;
-}
+.cart-widget {
+    padding: 5px 10px;
+    position: relative;
+    display: inline-block;
+  }
 
-.cart__content-icono {
-    font-size: 1rem;
-    color: var(--clr-terciario);
-}
+.icon {
+    font-size: 1.5rem;
+    color: var(--clr-secundario);
+  }
+
+.cont {
+    position: absolute;
+    top: -5px;
+    right: -15px;
+    padding: 1px 5px;
+    border-radius: 50%;
+    background: var(--clr-secundario);
+    color: var(--clr-primario);
+    font-size: 14px;
+  }
