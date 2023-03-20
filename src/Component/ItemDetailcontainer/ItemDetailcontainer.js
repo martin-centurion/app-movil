@@ -82,7 +82,7 @@ function ItemDetailContainer() {
                         
                         {
                             goToCart
-                            ? <Link to='/'>
+                            ? <Link to='/cart'>
                                     <Button className='bot_add'>
                                         Ir al Carrito
                                     </Button>

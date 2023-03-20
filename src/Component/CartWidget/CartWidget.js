@@ -6,9 +6,8 @@ import { Link } from 'react-router-dom';
 
 function CartWidget() {
   
-  const { cart } = useContext(cartContext);
-
-  const carCount = cart.length;
+  
+  const { getCountInCart } = useContext(cartContext);
   
   return (
         
@@ -25,7 +24,7 @@ function CartWidget() {
                   className='icon'
                   />
                 <span className='cont'> 
-                    { carCount } 
+                    { getCountInCart() || '0' } 
                 </span>
              </Link>
 

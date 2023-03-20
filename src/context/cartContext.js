@@ -1,35 +1,44 @@
 import { createContext, useState } from "react";
-// 1 Crear el context
-// 2 Usar el context
-// 3 Proveer el context
 
-const cartContext = createContext({
-  cart: [],
-});
+const cartContext = createContext({cart: [],});
+const Provider = cartContext.Provider;
 
-// 4 Crear un Custom Provider
-function CartContextProvider(props) {
+export function CartContextProvider({ children }) {
   const [cart, setCart] = useState([]);
 
-  function addItem(user, count) {
-    const newCart = [...cart];
 
-    user.count = count;
-    newCart.push(user);
-    //newCart.push({...user,count});
-
+  function addItem(item, count) {
+    const newCart = JSON.parse(JSON.stringify(cart));
+    
+    if(isInCart(item.id)) {
+      let index = cart.findIndex((itemInCart) => itemInCart.id === item.id);
+      newCart[index].count = newCart[index].count + count;
+    } else {
+      newCart.push({ ...item, count});
+    }
     setCart(newCart);
-    //setCart([...cart, user]);
   }
+
+  function removeItemFromCart (id) {
+    const newCart = JSON.parse(JSON.stringify(cart));
+    setCart(newCart.filter(item => item.id !== id));
+  }
+  function getCountInCart() {
+    return cart.reduce((acc, newCount) => acc + newCount.count, 0);
+  }
+
+  function isInCart(id) {
+    return cart.some((item) => item.id === id);
+  }
+
+  const totalInCart = () => cart.reduce((acc, act) => acc + act.price * act.count, 0);
 
   return (
     // 5 pasar la prop value
-    <cartContext.Provider value={{ cart, addItem }}>
-      {props.children}
-    </cartContext.Provider>
+    <Provider value={{ cart, addItem, isInCart, removeItemFromCart, getCountInCart, totalInCart }}>
+      {children}
+    </Provider>
   );
 }
-
-export { CartContextProvider };
 
 export default cartContext;

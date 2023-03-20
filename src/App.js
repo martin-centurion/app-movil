@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from './Component/NavBar/NavBar';
 import ItemDetailContainer from './Component/ItemDetailcontainer/ItemDetailcontainer';
 import { CartContextProvider } from "./context/cartContext";
+import CartContainer from './Component/CartContainer/CartContainer';
 
 
 function App() {
@@ -19,6 +20,11 @@ function App() {
               <Route
                 path='/tienda'
                 element={<ItemListContainer />}
+              />
+
+              <Route
+                path='/cart'
+                element={<CartContainer />}
               />
 
               <Route 
