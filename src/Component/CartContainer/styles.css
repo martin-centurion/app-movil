@@ -14,13 +14,17 @@
   text-align: left;
 }
 
-button {
+.btn-delete {
+  align-items: center;
+}
+
+.btn-delete > button {
   color: var(--clr-terciario);
   font-size: 2rem;
   transition: .5s;
 }
 
-button:hover {
+.btn-delete > button:hover {
   color: rgb(236, 42, 42);
 }
 

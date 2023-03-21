@@ -83,9 +83,9 @@ function ItemDetailContainer() {
                         {
                             goToCart
                             ? <Link to='/cart'>
-                                    <Button className='bot_add'>
+                                    <span className='bot_add'>
                                         Ir al Carrito
-                                    </Button>
+                                    </span>
                               </Link>
                             : <ItemCount
                                     onAddToCart={onAddToCart}

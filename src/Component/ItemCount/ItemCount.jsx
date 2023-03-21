@@ -7,13 +7,13 @@ const ItemCount = ({ initial, stock, onAddToCart }) => {
   
     const decrease = () => {
       if (count > initial) {
-        setCount(count - 1);
+        setCount(count - 0.5);
       }
     };
   
     const increase = () => {
       if (count < stock) {
-        setCount(count + 1);
+        setCount(count + 0.5);
       }
     };
   
@@ -22,13 +22,13 @@ const ItemCount = ({ initial, stock, onAddToCart }) => {
   
           <div className='bot__content'>
             <div className='bot__content-contador'>
-                  <Button onTouchButton={decrease} >
+                  <button onClick={decrease} >
                       -
-                  </Button>
-                  <span className='contador'> {count} </span>
-                  <Button onTouchButton={increase} >
+                  </button>
+                  <p className='contador'> {count} </p>
+                  <button onClick={increase} >
                       +
-                  </Button>
+                  </button>
             </div>
             <div className='bot__content-bot'>
                 <Button className='bot_add' 

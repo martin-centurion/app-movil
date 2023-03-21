@@ -35,27 +35,30 @@
 
 .detail__content-title .stock {
     font-size: 1rem;
-    margin-top: 2rem;
+    margin: 2rem 0;
     color: var(--clr-terciario);
     font-family: var(--ff-secundario);
 }
 
-.detail__content-title button {
-    font-size: .75rem;
+
+.detail__content-title span {
+    border-radius: 10px;
+    font-size: .8rem;
+    padding: 1rem;
     letter-spacing: .15rem;
+    background-color: var(--clr-primario);
     text-transform: uppercase;
-    color: var(--clr-primario);
-    border: 2px solid var(--clr-primario);
-    padding: .5rem 1.5rem;
+    color: var(--clr-secundario);
     cursor: pointer;
-    margin-top: 1rem;
     transition: .3s;
 }
 
-.detail__content-title button:hover {
-    background-color: var(--clr-primario);
-    color: var(--clr-secundario);
+.detail__content-title span {
+    background-color: var(--clr-gris-claro);
+    color: var(--clr-primario);
 }
+
+
 
 @media screen and (max-width: 768px) {
 

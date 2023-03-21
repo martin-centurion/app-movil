@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import cartContext from "../../context/cartContext";
 import { TiDelete } from 'react-icons/ti';
 import "./styles.css";
+import CheckOut from "./CheckOut";
 
 function CartContainer() {
   const { cart, totalInCart, removeItemFromCart } = useContext(cartContext);
@@ -47,11 +48,12 @@ function CartContainer() {
                                     <small>Subtotal</small>
                                     <p>${ user.count * user.price }</p>
                                 </div>
-                                <div>
+                                <div className='btn-delete'>
                                   <button onClick={ () => removeItemFromCart(user.id) }>
                                     <TiDelete />
                                   </button>
                                 </div>
+                                
                           </div>
 
                       );
@@ -62,6 +64,7 @@ function CartContainer() {
             <div className='total'>
                 <h5>Total precio:</h5>          
                 <p>${ totalInCart() }</p>
+                <CheckOut />
             </div>
       </div>
       
