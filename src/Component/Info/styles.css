@@ -1,0 +1,32 @@
+.info {
+    background-color: rgb(66, 247, 247);
+}
+
+.info__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 5rem;
+    color: var(--clr-primario);
+    gap: 3rem;
+}
+
+.info__content-ic {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.info__content-ic p {
+    font-size: 2rem;
+}
+
+.info__content-ic h4 {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-family: var(--ff-secundario);
+}
+
+.info__content-ic .parrafo {
+    margin-top: 1rem;
+    font-size: 1rem;
+}

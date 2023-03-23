@@ -1,6 +1,6 @@
 .header {
     padding: 1rem;
-    background-color: var(--clr-primario);
+    background-color: var(--clr-primario-dark);
 }
 
 .header__content {
@@ -14,6 +14,7 @@
     color: var(--clr-secundario);
     margin: 0 15px;
     font-size: 1rem;
+    transition: .3s;
 }
 
 .cart {

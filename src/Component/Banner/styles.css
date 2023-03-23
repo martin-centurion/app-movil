@@ -1,0 +1,43 @@
+.banner {
+    background-color: var(--clr-primario-dark);
+    color: var(--clr-secundario);
+}
+
+.banner__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5rem;
+}
+
+.banner__content-title {
+    width: 500px;
+}
+
+.banner__content-title h1 {
+    width: 300px;
+    font-size: 4rem;
+    font-family: var(--ff-secundario);
+}
+
+.banner__content-title p {
+    margin-top: 2rem;
+    font-size: 1rem;
+    color: var(--clr-terciario);
+}
+
+.banner__content button {
+    border-radius: 10px;
+    margin-top: 2rem;
+    font-size: 1rem;
+    border: 2px solid var(--clr-terciario);
+    padding: .6rem 1.5rem;
+    color: var(--clr-secundario);
+    transition: .3s;
+}
+
+.banner__content button:hover {
+    background-color: var(--clr-secundario);
+    border: 2px solid var(--clr-secundario);
+    color: var(--clr-primario-dark);
+}
