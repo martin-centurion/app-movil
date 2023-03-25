@@ -1,0 +1,18 @@
+.empty {
+    padding: 4rem;
+}
+
+.empty__content {
+    display: flex;
+    align-items: center;
+}
+
+.empty__content-icono {
+    font-size: 20rem;
+    color: var(--clr-gris-claro);
+}
+
+.empty__content-txt {
+    padding: 2rem;
+}
+

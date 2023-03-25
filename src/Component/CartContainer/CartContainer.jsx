@@ -1,22 +1,17 @@
 import React from "react";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
 import cartContext from "../../context/cartContext";
 import { TiDelete } from 'react-icons/ti';
 import "./styles.css";
 import CheckOut from "./CheckOut";
+import CartEmpty from "../CartEmpty/CartEmpty";
 
 function CartContainer() {
   const { cart, totalInCart, removeItemFromCart } = useContext(cartContext);
 
   if (cart.length === 0) {
       return (
-        <>
-          <p>El carrito esta vacio</p>
-          <Link to='/tienda'>
-            <button>Hacer Compras</button>
-          </Link>
-        </>
+        <CartEmpty />
       )
   }
 
@@ -64,8 +59,9 @@ function CartContainer() {
             <div className='total'>
                 <h5>Total precio:</h5>          
                 <p>${ totalInCart() }</p>
-                <CheckOut />
             </div>
+
+            <CheckOut />
       </div>
       
       
