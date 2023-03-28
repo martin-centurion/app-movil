@@ -33,9 +33,14 @@ export function CartContextProvider({ children }) {
 
   const totalInCart = () => cart.reduce((acc, act) => acc + act.price * act.count, 0);
 
+ function clearCart () {
+   setCart([]);
+  
+ }
+
   return (
     // 5 pasar la prop value
-    <Provider value={{ cart, addItem, isInCart, removeItemFromCart, getCountInCart, totalInCart }}>
+    <Provider value={{ cart, addItem, isInCart, removeItemFromCart, getCountInCart, totalInCart, clearCart }}>
       {children}
     </Provider>
   );

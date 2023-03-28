@@ -1,8 +1,12 @@
+.products__content {
+  display: flex;
+  flex-direction: row;
+}
 
 .products__content-card {
   background-color: var(--clr-gris-claro);
   margin: 2rem 3rem;
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
@@ -10,12 +14,20 @@
 }
 
 .products__content-cart-title {
-  width: 250px;
+  width: 150px;
   text-align: left;
+  margin-left: 20px;
+}
+
+.products__content-cart-detail {
+  width: 90px;
+  text-align: left;
+  margin-left: 15px;
 }
 
 .btn-delete {
   align-items: center;
+  margin: 0 20px;
 }
 
 .btn-delete > button {
@@ -30,7 +42,8 @@
 
 .total {
   display: flex;
-  margin: 0 3rem;
+  flex-direction: column;
+  margin: 2rem 0;
   align-items: baseline;
 }
 
@@ -45,7 +58,6 @@ small {
 }
 
 .total p {
-  margin-left: 3rem;
   color: var(--clr-primario);
   font-size: 3rem;
 }

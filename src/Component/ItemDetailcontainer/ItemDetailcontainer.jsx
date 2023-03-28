@@ -5,7 +5,7 @@ import { useContext } from "react";
 import cartContext from "../../context/cartContext";
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
-import Button from "../Button/Button";
+
 
 // Config Firebase---------------------------------------------------------
 
@@ -55,7 +55,7 @@ function ItemDetailContainer() {
         setUser(respuesta);
       })
       .catch((error) => alert(error));
-  }, []);
+  }, [idUser]);
 
   const { addItem } = useContext(cartContext);
 
