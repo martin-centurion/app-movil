@@ -2,10 +2,10 @@ import React from 'react';
 import Button from "../Button/Button";
 
 function CheckOut() {
-
+/* 
     function handleCheckout() {
         
-    }
+    } */
 
   return (
     <div className='container'>

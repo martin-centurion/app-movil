@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import ItemList from '../ItemList/ItemList';
 import { useParams } from "react-router-dom";
 import './styles.css';
+import Loader from '../Loader/Loader';
 
 //----Import Firebase
 
@@ -73,13 +74,20 @@ async function getItemsFromDatabase() {
   
     useEffect(() => {
       leerDatos();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [idCategory]);
   
     return (
       <div className='container'>
         <NavCategory />
         <div className='producto'>
-          <ItemList users={users} />
+          {
+            isLoading?
+            <Loader />
+            :
+            <ItemList users={users} />
+
+          }
         </div>
       </div>
     );

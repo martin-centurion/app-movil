@@ -19,18 +19,17 @@ function CartContainer() {
   return (
       <>
       <div className='products container'>
-
-      <h1>Carrito de compras</h1>
             <div className='products__content'>
                 <div className='products__content-carrito'>
+                    
                   
                   {
                     
                     cart.map((user) => {
                       return (
                           <div key={user.id} className='products__content-card'>
-                                <div>
-                                    <img border-radius={50} height={100} src={user.img300} alt={user.title} />
+                                <div className='products__content-card-img'>
+                                    <img src={user.img300} alt={user.title} />
                                 </div>
                                 <div className='products__content-cart-title'>
                                     <small>Producto</small>
@@ -54,13 +53,14 @@ function CartContainer() {
                                   </button>
                                 </div>
                                 
+                                
                           </div>
 
                       );
                     })
                     
                   }
-                <Button onTouchButton={ () => clearCart() }>Limpiar Carrito</Button>
+                
                 </div>
                 <div className='total'>
                     <div>
@@ -68,6 +68,10 @@ function CartContainer() {
                           <p>${ totalInCart() }</p>
                     </div>
                     <CheckOut />
+
+                    <div>
+                        <Button onTouchButton={ () => clearCart() }>Limpiar Carrito</Button>
+                    </div>
                 </div>
             </div>
             

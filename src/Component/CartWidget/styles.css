@@ -12,11 +12,20 @@
 
 .cont {
     position: absolute;
+    width: 25px;
+    height: 25px;
     top: -5px;
-    right: -15px;
-    padding: 1px 5px;
+    right: -18px;
+    padding: 2px 5px;
     border-radius: 50%;
     background: var(--clr-secundario);
     color: var(--clr-primario);
     font-size: 14px;
+    align-items: center;
+    justify-content: center;
   }
+
+  .empty-cart {
+    display: none;
+  }
+

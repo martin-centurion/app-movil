@@ -40,6 +40,12 @@
     font-family: var(--ff-secundario);
 }
 
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+}
 
 .detail__content-title span {
     border-radius: 10px;
@@ -53,7 +59,7 @@
     transition: .3s;
 }
 
-.detail__content-title span {
+.detail__content-title span:hover {
     background-color: var(--clr-gris-claro);
     color: var(--clr-primario);
 }

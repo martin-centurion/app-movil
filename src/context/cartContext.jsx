@@ -24,7 +24,9 @@ export function CartContextProvider({ children }) {
     setCart(newCart.filter(item => item.id !== id));
   }
   function getCountInCart() {
+    
     return cart.reduce((acc, newCount) => acc + newCount.count, 0);
+    
   }
 
   function isInCart(id) {

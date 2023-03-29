@@ -5,12 +5,14 @@ import { useContext } from "react";
 import cartContext from "../../context/cartContext";
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
+import Loader from "../Loader/Loader";
 
 
 // Config Firebase---------------------------------------------------------
 
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, doc, getDoc } from "firebase/firestore";
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyD-gg7YhLFeWODpwNVbWKF5PNFrpSfarNA",
@@ -44,6 +46,7 @@ async function getSingleItemFromDatabase(idItem) {
 function ItemDetailContainer() {
   const [user, setUser] = useState({});
   const [goToCart, setGoToCart] = useState(false);
+  const [isLoading, setIsLoading] = useState(true)
 
 
   const params = useParams();
@@ -53,6 +56,7 @@ function ItemDetailContainer() {
     getSingleItemFromDatabase(idUser)
       .then((respuesta) => {
         setUser(respuesta);
+        setIsLoading(false);
       })
       .catch((error) => alert(error));
   }, [idUser]);
@@ -65,9 +69,15 @@ function ItemDetailContainer() {
   }
 
 
+
   return (
     <div className='detail container'>
         <div className='detail__content'>
+                {
+
+                isLoading?
+                <Loader />
+                :
                 <div className='detail__content-img' key={user.id}>
                     
                     <div className='img-movil'>
@@ -82,11 +92,19 @@ function ItemDetailContainer() {
                         
                         {
                             goToCart
-                            ? <Link to='/cart'>
+                            ? 
+                            <div className='content'>
+                            <Link to='/cart'>
                                     <span className='bot_add'>
                                         Ir al Carrito
                                     </span>
                               </Link>
+                              <Link to='/tienda'>
+                                    <span className='bot_add'>
+                                        Seguir comprando
+                                    </span>
+                            </Link>
+                            </div>
                             : <ItemCount
                                     onAddToCart={onAddToCart}
                                     initial={1}
@@ -98,6 +116,8 @@ function ItemDetailContainer() {
                     
                         
                 </div>
+
+                }
         </div>
     </div>
   );

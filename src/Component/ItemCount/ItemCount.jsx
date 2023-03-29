@@ -7,13 +7,13 @@ const ItemCount = ({ initial, stock, onAddToCart }) => {
   
     const decrease = () => {
       if (count > initial) {
-        setCount(count - 0.5);
+        setCount(count - 1);
       }
     };
   
     const increase = () => {
       if (count < stock) {
-        setCount(count + 0.5);
+        setCount(count + 1);
       }
     };
   
