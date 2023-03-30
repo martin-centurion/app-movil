@@ -64,7 +64,8 @@ export default function CheckoutForm(props) {
           onChange={handleChange}
         />
       </div>
-      <Button
+      <button
+        className='bot-createorder'
         disabled={
           !(
             userData.name !== "" &&
@@ -72,10 +73,10 @@ export default function CheckoutForm(props) {
             userData.email !== ""
           )
         }
-        onTouchButton={() => props.onSubmit(userData)}
+        onClick={() => props.onSubmit(userData)}
       >
         Crear orden
-      </Button>
+      </button>
       <Button onTouchButton={clearForm}>limpiar form</Button>
     </div>
   );
