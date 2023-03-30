@@ -21,16 +21,11 @@ const firebaseConfig = {
   appId: "1:31661348798:web:78f7a3958d5f25ac120bef"
 };
 
-// Initialize Firebase
+
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 
-// async await
-//1. Obtener la referencia a mi colección "products"
-//2. Llamamos a getDocs con dicha colección
-//3. Dentro de la respuesta tenemos un array de documentos
-//4. Extraemos los datos con doc.data()
 async function getItemsFromDatabase() {
     const productsColectionRef = collection(db, "products");
     let snapshotProducts = await getDocs(productsColectionRef);
@@ -50,8 +45,6 @@ async function getItemsFromDatabase() {
     const dataProducts = documents.map((doc) => ({ ...doc.data(), id: doc.id }));
     return dataProducts;
   }
-  
-  // Config Firebase--------------------------------------------------------------
   
   function ItemListContainer() {
     const [users, setUsers] = useState([]);

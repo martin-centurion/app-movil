@@ -7,11 +7,13 @@ import { CartContextProvider } from "./context/cartContext";
 import CartContainer from './Component/CartContainer/CartContainer';
 import Banner from './Component/Banner/Banner';
 import Footer from './Component/Footer/Footer';
+import CheckOutId from './Component/CheckOutId/CheckOutId';
 
 function App() {
   return (
     <div>
       <CartContextProvider>
+
         <BrowserRouter>
 
           <NavBar />
@@ -43,9 +45,17 @@ function App() {
                 element={<ItemDetailContainer />}
               />
 
+              <Route
+                path='/checkout/:idCheckOut'
+                element={<CheckOutId />}
+              />
+
           </Routes>
+
           <Footer />
+
         </BrowserRouter>
+
       </CartContextProvider>
     </div>
   );

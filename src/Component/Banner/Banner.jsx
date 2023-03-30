@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Info from '../Info/Info';
 import './styles.css';
+import ItemListContainer from '../ItemListContainer/ItemListContainer';
 
 function Banner() {
   return (
@@ -23,7 +24,9 @@ function Banner() {
         
     </div>
         <Info />
+        <ItemListContainer />
     </div>
+
   )
 }
 

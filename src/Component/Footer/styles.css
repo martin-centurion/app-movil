@@ -71,3 +71,15 @@
 .footer__content-copyright .bot-desarrollador:hover {
     color: aqua;
 }
+
+@media screen and (max-width: 768px) {
+    .footer {
+        padding: 2rem;
+        margin-top: 2rem;
+    }
+
+    .footer__content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}

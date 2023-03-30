@@ -67,7 +67,8 @@ function CartContainer() {
                           <h5>Total del carrito:</h5>          
                           <p>${ totalInCart() }</p>
                     </div>
-                    <CheckOut />
+
+                    <CheckOut total = {totalInCart()} cart = { cart }/>
 
                     <div>
                         <Button onTouchButton={ () => clearCart() }>Limpiar Carrito</Button>

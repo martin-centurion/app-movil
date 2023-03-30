@@ -30,3 +30,13 @@
     margin-top: 1rem;
     font-size: 1rem;
 }
+
+@media screen and (max-width: 768px) {
+    .info__content {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+        color: var(--clr-primario);
+        gap: 2rem;
+    }
+    
+}

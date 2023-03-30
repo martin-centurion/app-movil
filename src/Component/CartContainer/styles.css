@@ -73,10 +73,11 @@ small {
   }
 
   .products__content-card {
-    background-color: var(--clr-gris-claro);
-    border-radius: 10px;
-    display: flex;
+    margin: 1rem;
+    padding: 2rem;
     flex-direction: column;
+    border: 2px solid var(--clr-gris-claro);
+    border-radius: 10px;
   }
   
   .products__content-cart-title {

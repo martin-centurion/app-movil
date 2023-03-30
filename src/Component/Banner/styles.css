@@ -41,3 +41,24 @@
     border: 2px solid var(--clr-secundario);
     color: var(--clr-primario-dark);
 }
+
+@media screen and (max-width: 768px) {
+    .banner__content {
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .banner__content-title {
+        width: 100%;
+    }
+
+    .banner__content-title h1 {
+        width: 200px;
+        font-size: 3rem;
+        font-family: var(--ff-secundario);
+    }
+
+    .banner__content-img {
+        display: none;
+    }
+}
