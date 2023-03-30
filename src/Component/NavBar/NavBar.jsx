@@ -29,13 +29,19 @@ function NavBar() {
                             <button onClick={ showNavBar }>Home</button>
                         </Link>
                         <Link to="/tienda">
-                            <button onClick={ showNavBar }>Tienda</button>
+                            <button onClick={ showNavBar }>Todo</button>
                         </Link>
-                        <Link to="/">
-                            <button onClick={ showNavBar }>Nosotros</button>
+                        <Link to="/category/ternera">
+                            <button onClick={ showNavBar }>Ternera</button>
                         </Link>
-                        <Link to="/">
-                            <button onClick={ showNavBar }>Contacto</button>
+                        <Link to="/category/cerdo">
+                            <button onClick={ showNavBar }>Cerdo</button>
+                        </Link>
+                        <Link to="/category/ave">
+                            <button onClick={ showNavBar }>Ave</button>
+                        </Link>
+                        <Link to="/category/achura">
+                            <button onClick={ showNavBar }>Achuras</button>
                         </Link>
                         <Link onClick={ showNavBar } to='/cart'>
                             <CartWidget />
@@ -54,9 +60,11 @@ function NavBar() {
                             onClick={ showNavBar }>
                             <VscListSelection />
                         </button>
-                    </div>  
-                </div>
 
+                        
+                    </div>  
+                    
+                </div>
         </div>
     </div>
   )

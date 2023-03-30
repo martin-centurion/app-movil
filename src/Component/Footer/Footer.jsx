@@ -17,13 +17,19 @@ function Footer() {
                     <button className='btn-footer'>Home</button>
                 </Link>
                 <Link to='/tienda'>
-                    <button className='btn-footer'>Tienda</button>
+                    <button className='btn-footer'>Todo</button>
                 </Link>
-                <Link to='/'>
-                    <button className='btn-footer'>Nosotros</button>
+                <Link to="/category/ternera">
+                    <button className='btn-footer'>Ternera</button>
                 </Link>
-                <Link to='/'>
-                    <button className='btn-footer'>Contacto</button>
+                <Link to="/category/cerdo">
+                    <button className='btn-footer'>Cerdo</button>
+                </Link>
+                <Link to="/category/ave">
+                    <button className='btn-footer'>Ave</button>
+                </Link>
+                <Link to="/category/achura">
+                    <button className='btn-footer'>Achuras</button>
                 </Link>
             </div>
 

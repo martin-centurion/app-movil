@@ -3,7 +3,7 @@ import './styles.css';
 
 function Logo() {
   return (
-    <img src='https://i.ibb.co/ssyJnML/logo-app-60.png' alt='Frigorifico Martelli'/>
+    <img src='https://i.ibb.co/s2M5nz3/logo-frigorifico-martelli-90x90.png' alt='Frigorifico Martelli'/>
   )
 }
 

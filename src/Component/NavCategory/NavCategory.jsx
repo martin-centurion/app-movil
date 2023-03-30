@@ -6,7 +6,7 @@ function NavCategory() {
   return (
     <div className='category'>
         <div className='category__content'>
-            <h2>Explore / Nuestros Cortes</h2>
+            <h2>Premium / Nuestros Cortes</h2>
             <nav className='nav-category'>
                 <Link to='/category/ternera'>
                     <button className='btn-category'>Ternera</button>

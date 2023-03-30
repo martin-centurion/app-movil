@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, addDoc, collection } from "firebase/firestore";
+import products from "../products/products";
 
 
 const firebaseConfig = {
@@ -20,4 +21,12 @@ export async function createOrder(orderData) {
     const response = await addDoc(collectionRef, orderData);
     console.log('Orden creada correctamente', response.id);
     return response.id
+}
+
+export async function exportData() {
+    for (let item of products) {
+        const collectionRef = collection(db, 'products');
+        const {id} = await addDoc(collectionRef, item);
+        console.log('Documento creado', id);
+    }
 }

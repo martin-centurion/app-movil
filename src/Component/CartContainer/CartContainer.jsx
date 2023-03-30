@@ -6,6 +6,7 @@ import "./styles.css";
 import CheckOut from "./CheckOut";
 import CartEmpty from "../CartEmpty/CartEmpty";
 import Button from "../Button/Button";
+import CheckoutForm from "./CheckOutForm";
 
 function CartContainer() {
   const { cart, totalInCart, removeItemFromCart, clearCart } = useContext(cartContext);
@@ -68,7 +69,7 @@ function CartContainer() {
                           <p>${ totalInCart() }</p>
                     </div>
 
-                    <CheckOut total = {totalInCart()} cart = { cart }/>
+                    <CheckoutForm />
 
                     <div>
                         <Button onTouchButton={ () => clearCart() }>Limpiar Carrito</Button>

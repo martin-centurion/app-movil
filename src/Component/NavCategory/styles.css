@@ -37,6 +37,9 @@
         padding: 1rem 2rem 0 2rem;
     }
 
+    .category__content h2 {
+        font-size: 1rem;
+    }
 
     .nav-category {
         justify-content: space-between;
