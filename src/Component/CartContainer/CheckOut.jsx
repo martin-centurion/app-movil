@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import cartContext from '../../context/cartContext';
 import { createOrder } from '../../services/firestore';
-import Button from "../Button/Button";
+import CheckoutForm from './CheckOutForm';
 
 function CheckOut( { cart, total } ) {
 
@@ -10,25 +10,26 @@ function CheckOut( { cart, total } ) {
     const navigateTo = useNavigate();
 
 
-    async function handleCheckout() {
+    async function handleCheckout(userData) {
         
         const orderData = { 
-            buyer: { name: 'Santiago', phone: '123456', email: 'santi@santi.com' },
+            buyer: userData,
             items: cart,
             total: total,
             timestamp: new Date(),
         }
 
+        console.log(orderData);
+
         const id = await createOrder(orderData);
         navigateTo(`/checkout/${id}`);
-        clearCart();
-        
+        clearCart();        
     } 
 
   return (
-    <div className='container'>
+    <div>
         
-        <Button onTouchButton={handleCheckout} >Terminar Compra</Button>
+        <CheckoutForm onSubmit={handleCheckout}/>
         
     </div>
   )

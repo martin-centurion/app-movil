@@ -65,6 +65,30 @@ small {
   font-size: 3rem;
 }
 
+.form {
+  margin-top: 2rem;
+}
+
+.form > h4 {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  font-family: var(--ff-secundario);
+  letter-spacing: .025rem;
+}
+
+.form__content {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  width: 200px;
+}
+
+.form__content-label {
+  font-size: .8rem;
+  width: 100px;
+}
+
+
 @media screen and (max-width: 768px) {
 
   .products__content {

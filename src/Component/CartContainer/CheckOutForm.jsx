@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import Button from "../Button/Button";
 
 export default function CheckoutForm(props) {
   const [userData, setUserData] = useState({
-    name: "",
-    email: "",
-    phone: "",
+    name: '',
+    email: '',
+    phone: '',
   });
 
   console.log(userData);
@@ -20,21 +21,19 @@ export default function CheckoutForm(props) {
 
   function clearForm() {
     setUserData({
-      name: "",
-      email: "",
-      phone: "",
+      name: '',
+      email: '',
+      phone: '',
     });
   }
 
-  function submitData(){
-    props.onSubmit(userData)
-  }
+
 
   return (
-    <div>
-      <h2>Completa tus datos para completar la compra🛍</h2>
-      <div style={{ display: "flex", marginBottom: 8 }}>
-        <label style={{ width: "100px", marginRight: 4 }}>Nombre</label>
+    <div className='form'>
+      <h4>Completa tus datos para completar la compra.</h4>
+      <div className='form__content'>
+        <label className='form__content-label'>Nombre</label>
         <input
           value={userData.name}
           name="name"
@@ -44,8 +43,8 @@ export default function CheckoutForm(props) {
         />
       </div>
 
-      <div style={{ display: "flex", marginBottom: 8 }}>
-        <label style={{ width: "100px", marginRight: 4 }}>Email</label>
+      <div className='form__content'>
+        <label className='form__content-label'>Email</label>
         <input
           value={userData.email}
           name="email"
@@ -55,8 +54,8 @@ export default function CheckoutForm(props) {
         />
       </div>
 
-      <div style={{ display: "flex", marginBottom: 8 }}>
-        <label style={{ width: "100px", marginRight: 4 }}>Phone</label>
+      <div className='form__content'>
+        <label className='form__content-label'>Telefono</label>
         <input
           value={userData.phone}
           name="phone"
@@ -65,7 +64,7 @@ export default function CheckoutForm(props) {
           onChange={handleChange}
         />
       </div>
-      <button
+      <Button
         disabled={
           !(
             userData.name !== "" &&
@@ -73,11 +72,11 @@ export default function CheckoutForm(props) {
             userData.email !== ""
           )
         }
-        onClick={submitData}
+        onTouchButton={() => props.onSubmit(userData)}
       >
         Crear orden
-      </button>
-      <button onClick={clearForm}>limpiar form</button>
+      </Button>
+      <Button onTouchButton={clearForm}>limpiar form</Button>
     </div>
   );
 }
