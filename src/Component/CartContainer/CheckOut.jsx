@@ -19,7 +19,6 @@ function CheckOut( { cart, total } ) {
             timestamp: new Date(),
         }
 
-        console.log(orderData);
 
         const id = await createOrder(orderData);
         navigateTo(`/checkout/${id}`);
