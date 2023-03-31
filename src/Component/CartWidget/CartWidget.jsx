@@ -11,8 +11,8 @@ function CartWidget() {
   return (
         
         <button className='cart-widget'>
-
              <Link to='/cart'>
+
                 <BsBag  
                   className='icon'
                   />
