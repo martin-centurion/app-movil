@@ -23,16 +23,9 @@ _Enlaces de la documentación de las herramientas utilizadas_
 
 ## Autor ✒️
 
-_Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
+_Creado por:_
 
 * **Martín Alejandro Centurión** - *Cursando Programación FullStack* - [martin-centurión](https://github.com/martin-centurion)
-
-
-## Expresiones de Gratitud 🎁
-
-* Comenta a otros sobre este proyecto 📢
-* Invita una cerveza 🍺 o un café ☕ a alguien del equipo. 
-* Da las gracias públicamente 🤓.
 
 
 ---
