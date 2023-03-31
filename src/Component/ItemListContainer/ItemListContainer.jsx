@@ -13,11 +13,11 @@ import NavCategory from '../NavCategory/NavCategory';
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD-gg7YhLFeWODpwNVbWKF5PNFrpSfarNA",
-  authDomain: "proyecto-final-react-js-f81a2.firebaseapp.com",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
   projectId: "proyecto-final-react-js-f81a2",
   storageBucket: "proyecto-final-react-js-f81a2.appspot.com",
-  messagingSenderId: "31661348798",
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MSG_ID,
   appId: "1:31661348798:web:78f7a3958d5f25ac120bef"
 };
 
